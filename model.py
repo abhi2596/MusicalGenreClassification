@@ -1,6 +1,7 @@
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import accuracy_score
+from sklearn.metrics import classification_report
 from dataset import create_dataset
 from sklearn.preprocessing import MinMaxScaler
 
@@ -25,6 +26,7 @@ def main():
     x_test = scaler.transform(x_test)
     y_pred = knn_predict(x_test, model)
     print("Accuracy of the model is:",accuracy_score(y_test, y_pred))
+    print("Classifcation Report",classification_report(y_test,y_pred))
 
 
 if __name__ == "__main__":
